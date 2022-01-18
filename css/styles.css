@@ -11,12 +11,12 @@
   --footer-bg-color: #2f303a;
   --header-border-color: #ececec;
   --hero-bg-color: #c4c4c4;
-  --hero-button-hover-color: #188ce8;
   --card-list-gap: 15px;
   --card-border: 1px solid #eeeeee;
   --clients-border: 1px solid #afb1b8;
   --social-icon-color: #afb1b8;
-  --hero-button-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  --button-hover-color: #188ce8;
+  --button-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   --team-n-modal-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   --filter-button-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -100,7 +100,7 @@ body {
   padding: 94px 0;
 }
 
-.section-title {
+.section__title {
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 36px;
@@ -108,15 +108,15 @@ body {
   text-align: center;
 }
 
-.accent {
+.logo__accent {
   color: var(--accent-color);
 }
 
-.nav-link.current {
+.nav-list__link--current {
   color: var(--accent-color);
 }
 
-.nav-link.current::after {
+.nav-list__link--current::after {
   position: absolute;
   content: '';
   width: 100%;
@@ -134,41 +134,39 @@ body {
   border-bottom: 1px solid var(--header-border-color);
 }
 
-.header > .container,
-.page-nav {
+.header__container,
+.nav {
   display: flex;
   align-items: center;
 }
+
+/* ----- Navigation -------- */
 
 .nav-list {
   display: flex;
 }
 
-.contact-list {
-  display: flex;
-  margin-left: auto;
-}
-
-.nav-item:not(:last-child) {
+.nav-list__item:not(:last-child) {
   margin-right: 50px;
 }
 
-.contact-item:not(:last-child) {
-  margin-right: 30px;
-}
+/* ----- Nav-Logo -------- */
 
-.nav-logo {
-  padding-top: 24px;
-  padding-bottom: 25px;
-  margin-right: 93px;
-  color: var(--title-text-color);
+.logo {
   font-family: Raleway, sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
 }
 
-.nav-link {
+.nav__logo {
+  padding-top: 24px;
+  padding-bottom: 25px;
+  margin-right: 93px;
+  color: var(--title-text-color);
+}
+
+.nav-list__link {
   display: block;
   position: relative;
   padding-top: 32px;
@@ -180,7 +178,18 @@ body {
   transition: color var(--main-effect);
 }
 
-.contact-link {
+/* ----- Nav-Contacts -------- */
+
+.contact-list {
+  display: flex;
+  margin-left: auto;
+}
+
+.contact-list__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.contact-list__link {
   display: flex;
   align-items: center;
   padding-top: 32px;
@@ -192,24 +201,21 @@ body {
   transition: color var(--main-effect);
 }
 
-.header-icon {
+.contact-list__icon {
   fill: currentColor;
   margin-right: 10px;
 }
 
-.nav-link:hover,
-.nav-link:focus,
-.contact-link:hover,
-.contact-link:focus {
+/* ----- Nav-Effects -------- */
+
+.nav-list__link:hover,
+.nav-list__link:focus,
+.contact-list__link:hover,
+.contact-list__link:focus {
   color: var(--accent-color);
 }
 
 /* ------------------ Секция Hero ------------------ */
-
-.section.hero {
-  text-align: center;
-  padding: 200px 0;
-}
 
 .container-fluid {
   min-height: 600px;
@@ -222,7 +228,12 @@ body {
   background-size: cover;
 }
 
-.hero-title {
+.section-hero {
+  text-align: center;
+  padding: 200px 0;
+}
+
+.section-hero__title {
   width: 630px;
   margin-left: auto;
   margin-right: auto;
@@ -235,24 +246,33 @@ body {
   text-transform: uppercase;
 }
 
-.hero-button {
-  padding: 10px 32px;
+.button {
+  display: block;
+  width: 200px;
+  height: 50px;
+  padding: 10px 0;
+  margin-right: auto;
+  margin-left: auto;
+
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+  border: transparent;
+  border-radius: 4px;
+  box-shadow: var(--button-shadow);
+
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
-  border: none;
-  border-radius: 4px;
-  transition: background-color var(--main-effect), box-shadow var(--main-effect);
+  text-align: center;
+
+  transition: background-color var(--main-effect);
 }
 
-.hero-button:hover,
-.hero-button:focus {
-  background-color: var(--hero-button-hover-color);
-  box-shadow: var(--hero-button-shadow);
+.button:hover,
+.button:focus {
+  background-color: var(--button-hover-color);
 }
 
 /* ---------------- Секция Features ---------------- */
@@ -474,7 +494,10 @@ body {
   border: var(--clients-border);
   border-radius: 4px;
   color: var(--social-icon-color);
-  transition: border-color var(--main-effect), color var(--main-effect);
+  transform: scale(1);
+
+  transition: border-color var(--main-effect), color var(--main-effect),
+    transform var(--main-effect);
 }
 
 .icon-clients {
@@ -485,6 +508,7 @@ body {
 .clients-link:focus {
   border-color: var(--accent-color);
   color: var(--accent-color);
+  transform: scale(1.1);
 }
 
 /* ------------------ Страница Portfolio ------------------ */
@@ -603,10 +627,12 @@ body {
   background-color: var(--footer-bg-color);
 }
 
-.footer-container {
+.footer__container {
   display: flex;
   align-items: baseline;
 }
+
+/* ------------------ Footer-LEFT ------------------ */
 
 .footer-left {
   /* min-width: 231px;
@@ -614,50 +640,49 @@ body {
   - максимально соотв. макету*/
   margin-right: 85px;
 }
+
+.footer-left__logo {
+  display: inline-block;
+  padding-bottom: 20px;
+  color: var(--primary-white-color);
+}
+
+.address-list__item:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+.address-list__link {
+  color: var(--primary-white-color);
+  transition: color var(--main-effect);
+}
+
+.address-list__link:hover,
+.address-list__link:focus {
+  color: var(--secondary-white-color);
+}
+
+.address-list__link--alfa {
+  color: var(--secondary-white-color);
+}
+
+.address-list__link--alfa:hover,
+.address-list__link--alfa:focus {
+  color: var(--primary-white-color);
+}
+
+/* ------------------ Footer-CENTER ------------------ */
+
 .footer-center {
   display: block;
   margin-right: 93px;
 }
 
-.footer-social-icons {
+.social-icons-thumb {
   display: flex;
 }
 
-.footer-logo {
-  display: inline-block;
-  padding-bottom: 20px;
-  color: var(--primary-white-color);
-  font-family: Raleway, sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
-}
-
-.footer-item:not(:last-child) {
-  margin-bottom: 9px;
-}
-
-.footer-link {
-  color: var(--primary-white-color);
-  transition: color var(--main-effect);
-}
-
-.footer-link:hover,
-.footer-link:focus {
-  color: var(--secondary-white-color);
-}
-
-.footer-link.alfa {
-  color: var(--secondary-white-color);
-}
-
-.footer-link.alfa:hover,
-.footer-link.alfa:focus {
-  color: var(--primary-white-color);
-}
-
-.join-title,
-.subscribe-label {
+.footer-center__label,
+.subscribe-form__label {
   display: block;
   font-size: inherit;
   font-weight: 700;
@@ -667,11 +692,11 @@ body {
   margin-bottom: 20px;
 }
 
-.footer-icons-list {
+.social-icons {
   display: flex;
 }
 
-.footer-icon-link {
+.social-icons__link {
   display: flex;
   width: 44px;
   height: 44px;
@@ -683,20 +708,22 @@ body {
   transition: background-color var(--main-effect);
 }
 
-.footer-icon-item:not(:last-child) {
+.social-icons__item:not(:last-child) {
   margin-right: 10px;
 }
 
-.footer-icon {
+.social-icons__icon {
   fill: currentColor;
 }
 
-.footer-icon-link:hover,
-.footer-icon-link:focus {
+.social-icons__link:hover,
+.social-icons__link:focus {
   background-color: var(--accent-color);
 }
 
-.subscribe-input {
+/* ------------------ Footer-RIGHT ------------------ */
+
+.subscribe-form__input {
   display: inline-block;
   width: 358px;
   height: 50px;
@@ -710,7 +737,7 @@ body {
   border-radius: 4px;
 }
 
-.subscribe-input::placeholder {
+.subscribe-form__input::placeholder {
   font-weight: inherit;
   font-size: 16px;
   line-height: 1.25;
@@ -718,35 +745,41 @@ body {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.subscribe-field {
+.subscribe-form__field {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.subscribe-button {
+.subscribe-form__button {
   display: flex;
-  width: 200px;
-  height: 50px;
   justify-content: center;
   align-items: center;
   padding: 0;
 
-  background: #2196f3;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border: transparent;
-  border-radius: 4px;
-
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-  color: var(--primary-white-color);
   fill: var(--primary-white-color);
 }
 
-.button-text {
+.button__text {
   margin-right: 10px;
+}
+
+.button:hover .button__icon {
+  animation-name: flyPlane;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in;
+  animation-play-state: runnung;
+}
+
+@keyframes flyPlane {
+  50% {
+    transform: translate(150%, -200%) rotate(-120deg) scale(0.8);
+    transform-origin: bottom left;
+  }
+  100% {
+    transform: translate(0%, 0%) rotate(-360deg);
+    transform-origin: top left;
+  }
 }
 
 /* ---------------- Модальное окно ------------------ */
@@ -967,31 +1000,4 @@ body {
   border: transparent;
   background-color: var(--accent-color);
   fill: var(--primary-white-color);
-}
-
-.button-submit {
-  display: block;
-  width: 200px;
-  height: 50px;
-  padding: 10px 55px;
-  margin-right: auto;
-  margin-left: auto;
-
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  text-align: center;
-  letter-spacing: 0.06em;
-  color: var(--primary-white-color);
-
-  background: var(--accent-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border: transparent;
-  border-radius: 4px;
-  transition: background-color var(--main-effect);
-}
-
-.button-submit:hover,
-.button-submit:focus {
-  background-color: #188ce8;
 }
