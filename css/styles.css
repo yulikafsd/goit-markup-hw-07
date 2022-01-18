@@ -106,6 +106,7 @@ body {
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .logo__accent {
@@ -282,12 +283,12 @@ body {
   margin: -15px;
 }
 
-.features-item {
+.features-list__item {
   margin: 15px;
   width: calc((100% - 120px) / 4);
 }
 
-.features-icons {
+.features-list__icons {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -305,16 +306,16 @@ body {
 } */
 
 /* если больше 4х эл-тов в списке: */
-/* .features-item:not(:nth-child(4n)) {
+/* .features-list__item:not(:nth-child(4n)) {
   margin-right: 30px;
 } */
 
 /* если только 4 эл-та в списке: */
-/* .features-item:not(:last-child) {
+/* .features-list__item:not(:last-child) {
   margin-right: 30px;
 } */
 
-.features-subtitle {
+.features-list__subtitle {
   margin-bottom: 10px;
   color: var(--title-text-color);
   font-weight: 700;
@@ -325,28 +326,24 @@ body {
 
 /* ------------------ Секция Profile ------------------ */
 
-.services {
+.section-services {
   padding-top: 0;
-}
-
-.services-title {
-  margin-bottom: 50px;
 }
 
 .services-list {
   display: flex;
 }
 
-.services-item:not(:last-child) {
-  margin-right: 30px;
-}
-
-.services-item {
+.services-list__item {
   position: relative;
   display: block;
 }
 
-.services-item-subtitle {
+.services-list__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.services-list__subtitle {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -366,12 +363,8 @@ body {
 
 /* ------------------ Секция Team ------------------ */
 
-.team {
+.section-team {
   background-color: var(--section-bg-color);
-}
-
-.team-title {
-  margin-bottom: 50px;
 }
 
 .team-list {
@@ -379,11 +372,7 @@ body {
   margin: calc(-1 * var(--card-list-gap));
 }
 
-.team-card {
-  padding: calc(2 * var(--card-list-gap)) 0;
-}
-
-.team-item {
+.team-list__item {
   margin: var(--card-list-gap);
   width: calc(100% - (8 * var(--card-list-gap) / 4));
   background-color: var(--primary-white-color);
@@ -391,7 +380,11 @@ body {
   border-radius: 0px 0px 4px 4px;
 }
 
-.team-subtitle {
+.team-list__card {
+  padding: calc(2 * var(--card-list-gap)) 0;
+}
+
+.team-list__subtitle {
   margin-bottom: 10px;
   color: var(--title-text-color);
   font-weight: 500;
@@ -400,23 +393,32 @@ body {
   text-align: center;
 }
 
-.team-text {
+.team-list__text {
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
   margin-bottom: 16px;
 }
 
-.team-icons-list {
+.team-list__icons-list {
   display: flex;
   justify-content: center;
 }
 
-.team-icon-item + .team-icon-item {
+/* Можно соединить след. 2 правила:
+.team-list__icon-item + .team-list__icon-item {
+  margin-left: 10px;
+ } */
+
+.team-list__icon-item {
   margin-left: 10px;
 }
 
-.team-icon-link {
+.team-list__icon-item--no-margin-left {
+  margin-left: 0;
+}
+
+.team-list__icon-link {
   display: flex;
   width: 44px;
   height: 44px;
@@ -427,19 +429,19 @@ body {
   transition: background-color var(--main-effect), color var(--main-effect);
 }
 
-.team-icon {
+.team-list__icon {
   fill: currentColor;
 }
 
-.team-icon-link:hover,
-.team-icon-link:focus {
+.team-list__icon-link:hover,
+.team-list__icon-link:focus {
   background-color: var(--accent-color);
   color: var(--primary-white-color);
 }
 
 /* ------ Второй вариант --------------*/
 
-/*.team-icon-link {
+/*.team-list__icon-link {
   display: flex;
   width: 44px;
   height: 44px;
@@ -449,18 +451,18 @@ body {
   transition: background-color var(--main-effect);
 }
 
-.team-icon {
+.team-list__icon {
   fill: var(--social-icon-color);
   transition: fill var(--main-effect);
 }
 
-.team-icon-link:hover,
-.team-icon-link:focus {
+.team-list__icon-link:hover,
+.team-list__icon-link:focus {
   background-color: var(--accent-color);
 }
 
-.team-icon-link:hover .team-icon,
-.team-icon-link:focus .team-icon {
+.team-list__icon-link:hover .team-icon,
+.team-list__icon-link:focus .team-icon {
   fill: var(--primary-white-color);
 }
 */
@@ -471,21 +473,17 @@ body {
   background-color: var(--primary-white-color);
 }
 
-.clients-title {
-  margin-bottom: 50px;
-}
-
 .clients-list {
   display: flex;
   margin: calc(-1 * var(--card-list-gap));
 }
 
-.clients-item {
+.clients-list__item {
   margin: var(--card-list-gap);
   width: calc(100% - (12 * var(--card-list-gap) / 6));
 }
 
-.clients-link {
+.clients-list__link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -500,12 +498,12 @@ body {
     transform var(--main-effect);
 }
 
-.icon-clients {
+.clients-list__icon {
   fill: currentColor;
 }
 
-.clients-link:hover,
-.clients-link:focus {
+.clients-list__link:hover,
+.clients-list__link:focus {
   border-color: var(--accent-color);
   color: var(--accent-color);
   transform: scale(1.1);
@@ -521,11 +519,11 @@ body {
   justify-content: center;
 }
 
-.filter-item:not(:last-child) {
+.filter-list__item:not(:last-child) {
   margin-right: 8px;
 }
 
-.filter-button {
+.filter-list__button {
   padding: 6px 22px;
   background-color: var(--section-bg-color);
   color: var(--title-text-color);
@@ -541,14 +539,14 @@ body {
     background-color var(--main-effect);
 }
 
-.filter-button:hover,
-.filter-button:focus {
+.filter-list__button:hover,
+.filter-list__button:focus {
   box-shadow: var(--filter-button-shadow);
   color: var(--primary-white-color);
   background-color: var(--accent-color);
 }
 
-.filter-button.filter-active {
+.filter-list__button--active {
   box-shadow: var(--filter-button-shadow);
   color: var(--primary-white-color);
   background-color: var(--accent-color);
@@ -868,7 +866,7 @@ body {
   transform: rotate(180deg);
   border-color: var(--accent-color);
 }
-.icon-close {
+.button-close__icon-close {
   fill: currentColor;
 }
 
@@ -880,7 +878,7 @@ body {
   padding: 40px 0;
 }
 
-.order-form-title {
+.order-form__title {
   display: block;
   margin-bottom: 12px;
 
@@ -891,7 +889,7 @@ body {
   color: var(--title-text-color);
 }
 
-.form-label {
+.order-form__label {
   position: relative;
 
   display: flex;
@@ -899,7 +897,7 @@ body {
   margin-bottom: 10px;
 }
 
-.label-text {
+.order-form__label-text {
   margin-bottom: 4px;
 
   font-size: 12px;
@@ -907,11 +905,13 @@ body {
   letter-spacing: 0.01em;
 }
 
-.form-label.textarea {
+.order-form__label-textarea {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
 }
 
-.form-input {
+.order-form__input {
   width: 100%;
   padding-top: 11px;
   padding-bottom: 11px;
@@ -923,7 +923,7 @@ body {
   transition: border-color var(--main-effect);
 }
 
-.form-textarea {
+.order-form__textarea {
   width: 100%;
   padding: 12px 16px;
 
@@ -939,21 +939,21 @@ body {
   transition: border-color var(--main-effect);
 }
 
-.form-input::placeholder,
-.form-textarea::placeholder {
+.order-form__input::placeholder,
+.order-form__textarea::placeholder {
   font-size: 14px;
   line-height: 1.16;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
 
-.form-label:focus-within > .form-input,
-.form-label:focus-within > .form-textarea {
+.order-form__label:focus-within > .order-form__input,
+.order-form__label-textarea:focus-within > .order-form__textarea {
   outline: transparent;
   border-color: var(--accent-color);
 }
 
-.form-icon {
+.order-form__icon {
   position: absolute;
   bottom: 11px;
   left: 12px;
@@ -961,11 +961,12 @@ body {
   transition: fill var(--main-effect);
 }
 
-.form-label:focus-within > .form-icon {
+.order-form__label:focus-within > .order-form__icon {
   fill: var(--accent-color);
 }
 
-.form-label.agreement {
+.order-form__label-agreement {
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -976,12 +977,12 @@ body {
   letter-spacing: 0.03em;
 }
 
-.agreement-link {
+.order-form__agreement-link {
   text-decoration-line: underline;
   color: var(--accent-color);
 }
 
-.form-icon-check {
+.order-form__icon-check {
   margin-right: 7px;
 
   border: 2px solid #212121;
@@ -992,11 +993,11 @@ body {
     fill var(--main-effect);
 }
 
-.form-label.agreement:focus-within > .form-icon-check {
+.order-form__label-agreement:focus-within > .order-form__icon-check {
   border-color: var(--accent-color);
 }
 
-.form-input.agreement:checked ~ .form-icon-check {
+.order-form__input-agreement:checked ~ .order-form__icon-check {
   border: transparent;
   background-color: var(--accent-color);
   fill: var(--primary-white-color);
