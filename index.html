@@ -185,7 +185,7 @@
                 <h3 class="team-list__subtitle">Игорь Демьяненко</h3>
                 <p class="team-list__text" lang="en">Product Designer</p>
                 <ul class="team-list__icons-list list">
-                  <li class="team-list__icon-item team-list__icon-item--no-margin-left">
+                  <li class="team-list__icon-item">
                     <a
                       href=""
                       class="team-list__icon-link link"
@@ -494,8 +494,8 @@
           <a class="logo footer-left__logo link" href="./index.html" lang="en">
             <span class="logo__accent">Web</span>Studio</a
           >
-          <address class="link">
-            <ul class="list">
+          <address class="address link">
+            <ul class="address-list list">
               <li class="address-list__item">
                 <a
                   class="address-list__link link"
@@ -523,53 +523,33 @@
         </div>
 
         <div class="footer-center">
-          <b class="footer-center__label">присоединяйтесь</b>
-          <div class="social-icons-thumb">
-            <ul class="social-icons list">
-              <li class="social-icons__item">
-                <a
-                  href=""
-                  class="social-icons__link link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg class="social-icons__icon" width="20" height="20">
+          <b class="social-label">присоединяйтесь</b>
+          <div class="social-wrapper">
+            <ul class="social-list list">
+              <li class="social-list__item">
+                <a href="" class="social-list__link link" target="_blank" rel="noopener noreferrer">
+                  <svg class="social-list__icon" width="20" height="20">
                     <use href="images/icons.svg#instagram"></use>
                   </svg>
                 </a>
               </li>
-              <li class="social-icons__item">
-                <a
-                  href=""
-                  class="social-icons__link link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg class="social-icons__icon" width="20" height="20">
+              <li class="social-list__item">
+                <a href="" class="social-list__link link" target="_blank" rel="noopener noreferrer">
+                  <svg class="social-list__icon" width="20" height="20">
                     <use href="images/icons.svg#twitter"></use>
                   </svg>
                 </a>
               </li>
-              <li class="social-icons__item">
-                <a
-                  href=""
-                  class="social-icons__link link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg class="social-icons__icon" width="20" height="20">
+              <li class="social-list__item">
+                <a href="" class="social-list__link link" target="_blank" rel="noopener noreferrer">
+                  <svg class="social-list__icon" width="20" height="20">
                     <use href="images/icons.svg#facebook"></use>
                   </svg>
                 </a>
               </li>
-              <li class="social-icons__item">
-                <a
-                  href=""
-                  class="social-icons__link link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg class="social-icons__icon" width="20" height="20">
+              <li class="social-list__item">
+                <a href="" class="social-list__link link" target="_blank" rel="noopener noreferrer">
+                  <svg class="social-list__icon" width="20" height="20">
                     <use href="images/icons.svg#linkedin"></use>
                   </svg>
                 </a>
@@ -632,7 +612,7 @@
             </svg>
           </label>
 
-          <label class="order-form__label-textarea">
+          <label class="order-form__label order-form__label--textarea">
             <span class="order-form__label-text">Комментарий</span>
             <textarea
               id="comment"
@@ -643,7 +623,7 @@
             ></textarea>
           </label>
 
-          <label class="order-form__label-agreement">
+          <label class="order-form__label order-form__label--agreement">
             <input
               type="checkbox"
               name="agreement"

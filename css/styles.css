@@ -405,18 +405,14 @@ body {
   justify-content: center;
 }
 
-/* Можно соединить след. 2 правила:
+.team-list__icon-item:not(:first-child) {
+  margin-left: 10px;
+}
+
+/* Второй вариант:
 .team-list__icon-item + .team-list__icon-item {
   margin-left: 10px;
  } */
-
-.team-list__icon-item {
-  margin-left: 10px;
-}
-
-.team-list__icon-item--no-margin-left {
-  margin-left: 0;
-}
 
 .team-list__icon-link {
   display: flex;
@@ -560,23 +556,23 @@ body {
   margin: calc(-1 * var(--card-list-gap));
 }
 
-.portfolio-item {
+.portfolio-list__item {
   margin: var(--card-list-gap);
   flex-basis: calc(100% / 3 - 2 * var(--card-list-gap));
   flex-basis: calc((100% - 90px) / 3);
 }
 
-.portfolio-link {
+.portfolio-list__link {
   display: block;
   transition: box-shadow var(--main-effect);
 }
 
-.portfolio-link:hover,
-.portfolio-link:focus {
+.portfolio-list__link:hover,
+.portfolio-list__link:focus {
   box-shadow: var(--portfolio-item-shadow);
 }
 
-.portfolio-subtitle {
+.portfolio-list__subtitle {
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 18px;
@@ -584,24 +580,24 @@ body {
   letter-spacing: 0.06em;
 }
 
-.portfolio-card {
+.portfolio-list__card {
   padding: 20px 24px;
   border: var(--card-border);
   border-top: 0;
 }
 
-.filter-name {
+.portfolio-list__filter-name {
   color: var(--primary-text-color);
   font-size: 16px;
   line-height: 1.87;
 }
 
-.portfolio-wrapper {
+.portfolio-img-thumb {
   position: relative;
   overflow: hidden;
 }
 
-.portfolio-overlay {
+.portfolio-list__overlay {
   position: absolute;
   width: 370px;
   height: 294px;
@@ -613,8 +609,8 @@ body {
   transition: transform var(--main-effect);
 }
 
-.portfolio-link:hover .portfolio-overlay,
-.portfolio-link:focus .portfolio-overlay {
+.portfolio-list__link:hover .portfolio-list__overlay,
+.portfolio-list__link:focus .portfolio-list__overlay {
   transform: translateY(-100%);
 }
 
@@ -675,11 +671,11 @@ body {
   margin-right: 93px;
 }
 
-.social-icons-thumb {
+.social-wrapper {
   display: flex;
 }
 
-.footer-center__label,
+.social-label,
 .subscribe-form__label {
   display: block;
   font-size: inherit;
@@ -690,11 +686,11 @@ body {
   margin-bottom: 20px;
 }
 
-.social-icons {
+.social-list {
   display: flex;
 }
 
-.social-icons__link {
+.social-list__link {
   display: flex;
   width: 44px;
   height: 44px;
@@ -706,16 +702,16 @@ body {
   transition: background-color var(--main-effect);
 }
 
-.social-icons__item:not(:last-child) {
+.social-list__item:not(:last-child) {
   margin-right: 10px;
 }
 
-.social-icons__icon {
+.social-list__icon {
   fill: currentColor;
 }
 
-.social-icons__link:hover,
-.social-icons__link:focus {
+.social-list__link:hover,
+.social-list__link:focus {
   background-color: var(--accent-color);
 }
 
@@ -905,9 +901,7 @@ body {
   letter-spacing: 0.01em;
 }
 
-.order-form__label-textarea {
-  display: flex;
-  flex-direction: column;
+.order-form__label--textarea {
   margin-bottom: 20px;
 }
 
@@ -948,7 +942,7 @@ body {
 }
 
 .order-form__label:focus-within > .order-form__input,
-.order-form__label-textarea:focus-within > .order-form__textarea {
+.order-form__label--textarea:focus-within > .order-form__textarea {
   outline: transparent;
   border-color: var(--accent-color);
 }
@@ -965,8 +959,7 @@ body {
   fill: var(--accent-color);
 }
 
-.order-form__label-agreement {
-  display: flex;
+.order-form__label--agreement {
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -993,7 +986,7 @@ body {
     fill var(--main-effect);
 }
 
-.order-form__label-agreement:focus-within > .order-form__icon-check {
+.order-form__label--agreement:focus-within > .order-form__icon-check {
   border-color: var(--accent-color);
 }
 
