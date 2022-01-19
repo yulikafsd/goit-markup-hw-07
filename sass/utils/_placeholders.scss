@@ -1,0 +1,50 @@
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+  font-style: normal;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.button {
+  display: block;
+  width: 200px;
+  height: 50px;
+  padding: 10px 0;
+  margin-right: auto;
+  margin-left: auto;
+
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+  border: transparent;
+  border-radius: 4px;
+  box-shadow: var(--button-shadow);
+
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  text-align: center;
+
+  transition: background-color var(--main-effect);
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--button-hover-color);
+}
