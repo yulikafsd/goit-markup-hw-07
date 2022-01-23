@@ -1,0 +1,53 @@
+
+// Футер Социалки
+
+.footer-center {
+  display: block;
+  margin-right: 93px;
+}
+
+.social-wrapper {
+  display: flex;
+}
+
+// назначить этим двум плейсхолдер?
+
+.social-label,
+.subscribe-form__label {
+  display: block;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: $primary-color;
+  margin-bottom: 20px;
+}
+
+.social-list {
+  display: flex;
+}
+
+.social-list__link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  background-color: $footer-icon-bg-color;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  color: $primary-color;
+  transition: background-color $main-effect;
+}
+
+.social-list__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-list__icon {
+  fill: currentColor;
+}
+
+.social-list__link:hover,
+.social-list__link:focus {
+  background-color: $accent-color;
+}

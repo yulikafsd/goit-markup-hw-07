@@ -1,0 +1,40 @@
+// Секция Клиенты
+
+.section.clients {
+  background-color: $primary-color;
+}
+
+.clients-list {
+  display: flex;
+  margin: calc(-1 * 15px);
+}
+
+.clients-list__item {
+  margin: 15px;
+  width: calc(100% - (12 * 15px) / 6);
+}
+
+.clients-list__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+  border: $clients-border;
+  border-radius: 4px;
+  color: $icon-fill-color;
+  transform: scale(1);
+
+  transition: border-color $main-effect, color $main-effect, transform $main-effect;
+}
+
+.clients-list__icon {
+  fill: currentColor;
+}
+
+.clients-list__link:hover,
+.clients-list__link:focus {
+  border-color: $accent-color;
+  color: $accent-color;
+  transform: scale(1.1);
+}

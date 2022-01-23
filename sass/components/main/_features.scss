@@ -1,0 +1,47 @@
+// Секция Особенности
+
+.features-list {
+  display: flex;
+  margin: -15px;
+}
+
+.features-list__item {
+  margin: 15px;
+  width: calc((100% - 120px) / 4);
+}
+
+.features-list__icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 120px;
+  background: $primary-bg-color;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+/* ----------- Второй вариант ------- */
+
+/* .features-list {
+  display: flex;
+} */
+
+/* если больше 4х эл-тов в списке: */
+/* .features-list__item:not(:nth-child(4n)) {
+  margin-right: 30px;
+} */
+
+/* если только 4 эл-та в списке: */
+/* .features-list__item:not(:last-child) {
+  margin-right: 30px;
+} */
+
+.features-list__subtitle {
+  margin-bottom: 10px;
+  color: $title-text-color;
+  font-weight: 700;
+  font-size: inherit;
+  line-height: 1.14;
+  text-transform: uppercase;
+}

@@ -1,6 +1,6 @@
 body {
-  background-color: var(--primary-white-color);
-  color: var(--primary-text-color);
+  background-color: $primary-color;
+  color: $primary-text-color;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -21,7 +21,7 @@ body {
 }
 
 .section__title {
-  color: var(--title-text-color);
+  color: $title-text-color;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
