@@ -7,6 +7,7 @@
 .team-list {
   display: flex;
   margin: calc(-1 * 15px);
+  @extend %list;
 }
 
 .team-list__item {
@@ -40,62 +41,62 @@
 .team-list__icons-list {
   display: flex;
   justify-content: center;
+  @extend %list;
 }
 
 .team-list__icon-item:not(:first-child) {
   margin-left: 10px;
 }
 
-/* Второй вариант:
-.team-list__icon-item + .team-list__icon-item {
-  margin-left: 10px;
- } */
+// Второй вариант:
+// .team-list__icon-item + .team-list__icon-item {
+//   margin-left: 10px;
+//  }
 
 .team-list__icon-link {
-  display: flex;
+  @include centeredFlex();
+  @extend %link;
+
   width: 44px;
   height: 44px;
+
   border-radius: 50%;
-  align-items: center;
-  justify-content: center;
   color: $icon-fill-color;
   transition: background-color $main-effect, color $main-effect;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    color: $primary-color;
+  }
 }
 
 .team-list__icon {
   fill: currentColor;
 }
 
-.team-list__icon-link:hover,
-.team-list__icon-link:focus {
-  background-color: $accent-color;
-  color: $primary-color;
-}
+// Второй вариант
 
-/* ------ Второй вариант --------------*/
+//   team-list__icon-link {
+//   @include centeredFlex();
+//   width: 44px;
+//   height: 44px;
 
-/*.team-list__icon-link {
-  display: flex;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-  transition: background-color $main-effect;
-}
+//   border-radius: 50%;
+//   transition: background-color $main-effect;
 
-.team-list__icon {
-  fill: $icon-fill-color;
-  transition: fill $main-effect;
-}
+// &:hover,
+// &:focus {
+//   background-color: $accent-color;
+// }
+// }
 
-.team-list__icon-link:hover,
-.team-list__icon-link:focus {
-  background-color: $accent-color;
-}
+// .team-list__icon {
+//   fill: $icon-fill-color;
+//   transition: fill $main-effect;
 
-.team-list__icon-link:hover .team-icon,
-.team-list__icon-link:focus .team-icon {
-  fill: $primary-color;
-}
-*/
+// .team-list__icon-link:hover &,
+// .team-list__icon-link:focus & {
+//   fill: $primary-color;
+// }
+// }

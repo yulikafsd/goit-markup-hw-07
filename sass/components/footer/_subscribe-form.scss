@@ -12,26 +12,22 @@
   border: $subscribe-input-border;
   box-shadow: $subscribe-input-shadow;
   border-radius: 4px;
-}
 
-.subscribe-form__input::placeholder {
-  font-weight: inherit;
-  font-size: 16px;
-  line-height: 1.25;
-  letter-spacing: 0.03em;
-  color: $subscribe-placeholder-color;
+  &::placeholder {
+    font-weight: inherit;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+    color: $subscribe-placeholder-color;
+  }
 }
 
 .subscribe-form__field {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include centeredFlex($just: space-between);
 }
 
 .subscribe-form__button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include centeredFlex();
   padding: 0;
 
   fill: $primary-color;

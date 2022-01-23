@@ -4,6 +4,7 @@
   display: flex;
   margin-bottom: 50px;
   justify-content: center;
+  @extend %list;
 }
 
 .filter-list__item:not(:last-child) {
@@ -27,17 +28,17 @@
   border-radius: 4px;
 
   transition: box-shadow $main-effect, color $main-effect, background-color $main-effect;
-}
 
-.filter-list__button:hover,
-.filter-list__button:focus {
-  box-shadow: $filter-button-shadow;
-  color: $primary-color;
-  background-color: $accent-color;
-}
+  &:hover,
+  &:focus {
+    box-shadow: $filter-button-shadow;
+    color: $primary-color;
+    background-color: $accent-color;
+  }
 
-.filter-list__button--active {
-  box-shadow: $filter-button-shadow;
-  color: $primary-color;
-  background-color: $accent-color;
+  &--active {
+    box-shadow: $filter-button-shadow;
+    color: $primary-color;
+    background-color: $accent-color;
+  }
 }

@@ -7,6 +7,7 @@
 .clients-list {
   display: flex;
   margin: calc(-1 * 15px);
+  @extend %list;
 }
 
 .clients-list__item {
@@ -15,9 +16,9 @@
 }
 
 .clients-list__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include centeredFlex();
+  @extend %link;
+
   width: 170px;
   height: 92px;
   border: $clients-border;
@@ -26,15 +27,15 @@
   transform: scale(1);
 
   transition: border-color $main-effect, color $main-effect, transform $main-effect;
+
+  &:hover,
+  &:focus {
+    border-color: $accent-color;
+    color: $accent-color;
+    transform: scale(1.1);
+  }
 }
 
 .clients-list__icon {
   fill: currentColor;
-}
-
-.clients-list__link:hover,
-.clients-list__link:focus {
-  border-color: $accent-color;
-  color: $accent-color;
-  transform: scale(1.1);
 }

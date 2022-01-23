@@ -18,14 +18,6 @@
   pointer-events: none;
 }
 
-.backdrop.is-hidden .modal {
-  top: 50%;
-  left: 50%;
-  opacity: 0;
-  visibility: hidden;
-  transform: translate(-50%, -50%) scale(0.5);
-}
-
 .modal {
   position: absolute;
   top: 50%;
@@ -33,9 +25,9 @@
   opacity: 1;
   visibility: visible;
   transform: translate(-50%, -50%) scale(1);
-  /* Или можно так, но это не гибко:
-  margin-left: calc(-1 * (528px / 2));
-  margin-top: calc(-1 * (581px / 2)); */
+  // Или можно так, но это не гибко:
+  // margin-left: calc(-1 * (528px / 2));
+  // margin-top: calc(-1 * (581px / 2));
   transition: transform $main-effect, opacity $main-effect, visibility $main-effect;
 
   min-width: 528px;
@@ -44,26 +36,29 @@
   background-color: $primary-color;
   box-shadow: $modal-shadow;
   border-radius: 4px;
+
+  .backdrop.is-hidden & {
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
 }
 
-/* ------ Третий вариант позиционирования -------- */
-/* работает с relative-absolute связками с 1 ребенком
-.backdrop {
-  position: fixed; - не статик, у ребенка абсолют
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-   */
+// Третий вариант позиционирования
+// работает с relative-absolute связками с 1 ребенком
+// .backdrop {
+//   position: fixed; - не статик, у ребенка абсолют
+//   @include centeredFlex();
+// }
 
 .button-close {
   position: absolute;
   top: 8px;
   right: 8px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include centeredFlex();
   width: 30px;
   height: 30px;
   padding: 0;
@@ -74,14 +69,15 @@
   border-radius: 50%;
 
   transition: transform $main-effect, color $main-effect, border-color $main-effect;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+    transform: rotate(180deg);
+    border-color: $accent-color;
+  }
 }
 
-.button-close:hover,
-.button-close:focus {
-  color: $accent-color;
-  transform: rotate(180deg);
-  border-color: $accent-color;
-}
 .button-close__icon-close {
   fill: currentColor;
 }
@@ -111,6 +107,21 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+
+  &--textarea {
+    margin-bottom: 20px;
+  }
+
+  &--agreement {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+  }
 }
 
 .order-form__label-text {
@@ -121,10 +132,6 @@
   letter-spacing: 0.01em;
 }
 
-.order-form__label--textarea {
-  margin-bottom: 20px;
-}
-
 .order-form__input {
   width: 100%;
   padding: 11px 12px 11px 42px;
@@ -133,6 +140,18 @@
   border-radius: 4px;
 
   transition: border-color $main-effect;
+
+  &::placeholder {
+    font-size: 14px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: $order-placeholder-color;
+  }
+
+  .order-form__label:focus-within > & {
+    outline: transparent;
+    border-color: $accent-color;
+  }
 }
 
 .order-form__textarea {
@@ -149,20 +168,18 @@
   letter-spacing: 0.01em;
 
   transition: border-color $main-effect;
-}
 
-.order-form__input::placeholder,
-.order-form__textarea::placeholder {
-  font-size: 14px;
-  line-height: 1.16;
-  letter-spacing: 0.01em;
-  color: $order-placeholder-color;
-}
+  &::placeholder {
+    font-size: 14px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: $order-placeholder-color;
+  }
 
-.order-form__label:focus-within > .order-form__input,
-.order-form__label--textarea:focus-within > .order-form__textarea {
-  outline: transparent;
-  border-color: $accent-color;
+  .order-form__label--textarea:focus-within > & {
+    outline: transparent;
+    border-color: $accent-color;
+  }
 }
 
 .order-form__icon {
@@ -171,44 +188,40 @@
   left: 12px;
   fill: $order-icons-fill;
   transition: fill $main-effect;
+
+  .order-form__label:focus-within > & {
+    fill: $accent-color;
+  }
 }
 
-.order-form__label:focus-within > .order-form__icon {
-  fill: $accent-color;
-}
-
-.order-form__label--agreement {
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 30px;
-
-  font-size: 14px;
-  line-height: 1.7;
-  letter-spacing: 0.03em;
+.order-form__input-agreement--hidden {
+  @extend %visually-hidden;
 }
 
 .order-form__agreement-link {
+  @extend %link;
+
   text-decoration-line: underline;
   color: $accent-color;
 }
 
 .order-form__icon-check {
   margin-right: 7px;
+  cursor: pointer;
 
   border: $icon-check-border;
   border-radius: 2px;
 
   fill: none;
   transition: border-color $main-effect, background-color $main-effect, fill $main-effect;
-}
 
-.order-form__label--agreement:focus-within > .order-form__icon-check {
-  border-color: $accent-color;
-}
+  .order-form__label--agreement:focus-within > & {
+    border-color: $accent-color;
+  }
 
-.order-form__input-agreement:checked ~ .order-form__icon-check {
-  border: transparent;
-  background-color: $accent-color;
-  fill: $primary-color;
+  .order-form__input-agreement:checked ~ & {
+    border: transparent;
+    background-color: $accent-color;
+    fill: $primary-color;
+  }
 }

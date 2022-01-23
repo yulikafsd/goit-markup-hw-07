@@ -22,9 +22,9 @@
   text-align: center;
 
   transition: background-color $main-effect;
-}
 
-.button:hover,
-.button:focus {
+&:hover,
+&:focus {
   background-color: $button-hover-color;
+}
 }

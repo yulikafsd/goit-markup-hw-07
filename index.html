@@ -18,7 +18,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
     />
     <!-- Мои стили -->
-    <link rel="stylesheet" href="./css/common.min.css" />
     <link rel="stylesheet" href="./css/main.min.css" />
   </head>
 
@@ -27,22 +26,22 @@
     <header class="header">
       <div class="header__container container">
         <nav class="nav">
-          <a href="./index.html" lang="en" class="logo nav__logo link"
+          <a href="./index.html" lang="en" class="logo nav__logo"
             ><span class="logo__accent">Web</span>Studio</a
           >
-          <ul class="nav-list list">
+          <ul class="nav-list">
             <li class="nav-list__item">
-              <a href="./index.html" class="nav-list__link nav-list__link--current link">Студия</a>
+              <a href="./index.html" class="nav-list__link nav-list__link--current">Студия</a>
             </li>
             <li class="nav-list__item">
-              <a href="./portfolio.html" class="nav-list__link link">Портфолио</a>
+              <a href="./portfolio.html" class="nav-list__link">Портфолио</a>
             </li>
-            <li class="nav-list__item"><a href="" class="nav-list__link link">Контакты</a></li>
+            <li class="nav-list__item"><a href="" class="nav-list__link">Контакты</a></li>
           </ul>
         </nav>
-        <ul class="contact-list list">
+        <ul class="contact-list">
           <li class="contact-list__item">
-            <a href="mailto:info@devstudio.com" class="contact-list__link link">
+            <a href="mailto:info@devstudio.com" class="contact-list__link">
               <svg class="contact-list__icon" width="16" height="12">
                 <use href="./images/icons.svg#envelope"></use>
               </svg>
@@ -50,7 +49,7 @@
             </a>
           </li>
           <li class="contact-list__item">
-            <a href="tel:+380961111111" class="contact-list__link link">
+            <a href="tel:+380961111111" class="contact-list__link">
               <svg class="contact-list__icon" width="10" height="16">
                 <use href="./images/icons.svg#smartphone"></use>
               </svg>
@@ -75,8 +74,10 @@
       <!-- Особенности -->
       <section class="section">
         <div class="container">
-          <h2 class="visually-hidden" aria-label="Особенности">Особенности</h2>
-          <ul class="features-list list">
+          <h2 class="section__title section__title--hidden" aria-label="Особенности">
+            Особенности
+          </h2>
+          <ul class="features-list">
             <li class="features-list__item">
               <div class="features-list__icons">
                 <svg width="70" height="70">
@@ -129,9 +130,9 @@
       <section class="section section-services">
         <div class="container">
           <h2 class="section__title">Чем мы занимаемся</h2>
-          <ul class="services-list list">
+          <ul class="services-list">
             <li class="services-list__item">
-              <a href="" class="services-list__link link">
+              <a href="" class="services-list__link">
                 <img
                   src="./images/main-1.jpg"
                   alt="человек программирует на компьютере десктопные приложения"
@@ -142,7 +143,7 @@
               </a>
             </li>
             <li class="services-list__item">
-              <a href="" class="services-list__link link">
+              <a href="" class="services-list__link">
                 <img
                   src="./images/main-2.jpg"
                   alt="человек с мобильным телефоном в руках разрабатывает мобильное приложение на ноутбуке"
@@ -153,7 +154,7 @@
               </a>
             </li>
             <li class="services-list__item">
-              <a href="" class="services-list__link link">
+              <a href="" class="services-list__link">
                 <img
                   src="./images/main-3.jpg"
                   alt="человек держит планшет с палитрой цветов для веб-дизайна"
@@ -172,7 +173,7 @@
         <div class="container">
           <h2 class="section__title">Наша команда</h2>
 
-          <ul class="team-list list">
+          <ul class="team-list">
             <li class="team-list__item">
               <div class="team-thumb">
                 <img
@@ -185,11 +186,11 @@
               <div class="team-list__card">
                 <h3 class="team-list__subtitle">Игорь Демьяненко</h3>
                 <p class="team-list__text" lang="en">Product Designer</p>
-                <ul class="team-list__icons-list list">
+                <ul class="team-list__icons-list">
                   <li class="team-list__icon-item">
                     <a
                       href=""
-                      class="team-list__icon-link link"
+                      class="team-list__icon-link"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -201,7 +202,7 @@
                   <li class="team-list__icon-item">
                     <a
                       href=""
-                      class="link team-list__icon-link"
+                      class="team-list__icon-link"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -213,7 +214,7 @@
                   <li class="team-list__icon-item">
                     <a
                       href=""
-                      class="link team-list__icon-link"
+                      class="team-list__icon-link"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -225,7 +226,7 @@
                   <li class="team-list__icon-item">
                     <a
                       href=""
-                      class="link team-list__icon-link"
+                      class="team-list__icon-link"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -250,11 +251,11 @@
               <div class="team-list__card">
                 <h3 class="team-list__subtitle">Ольга Репина</h3>
                 <p class="team-list__text" lang="en">Frontend Developer</p>
-                <ul class="team-list__icons-list list">
+                <ul class="team-list__icons-list">
                   <li class="team-list__icon-item team-list__icon-item--no-margin-left">
                     <a
                       href=""
-                      class="link team-list__icon-link"
+                      class="team-list__icon-link"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -266,7 +267,7 @@
                   <li class="team-list__icon-item">
                     <a
                       href=""
-                      class="link team-list__icon-link"
+                      class="team-list__icon-link"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -278,7 +279,7 @@
                   <li class="team-list__icon-item">
                     <a
                       href=""
-                      class="link team-list__icon-link"
+                      class="team-list__icon-link"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -290,7 +291,7 @@
                   <li class="team-list__icon-item">
                     <a
                       href=""
-                      class="link team-list__icon-link"
+                      class="team-list__icon-link"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -315,11 +316,11 @@
               <div class="team-list__card">
                 <h3 class="team-list__subtitle">Николай Тарасов</h3>
                 <p class="team-list__text" lang="en">Marketing</p>
-                <ul class="team-list__icons-list list">
+                <ul class="team-list__icons-list">
                   <li class="team-list__icon-item team-list__icon-item--no-margin-left">
                     <a
                       href=""
-                      class="link team-list__icon-link"
+                      class="team-list__icon-link"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -331,7 +332,7 @@
                   <li class="team-list__icon-item">
                     <a
                       href=""
-                      class="link team-list__icon-link"
+                      class="team-list__icon-link"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -343,7 +344,7 @@
                   <li class="team-list__icon-item">
                     <a
                       href=""
-                      class="link team-list__icon-link"
+                      class="team-list__icon-link"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -355,7 +356,7 @@
                   <li class="team-list__icon-item">
                     <a
                       href=""
-                      class="link team-list__icon-link"
+                      class="team-list__icon-link"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -380,11 +381,11 @@
               <div class="team-list__card">
                 <h3 class="team-list__subtitle">Михаил Ермаков</h3>
                 <p class="team-list__text" lang="en">UI Designer</p>
-                <ul class="team-list__icons-list list">
+                <ul class="team-list__icons-list">
                   <li class="team-list__icon-item team-list__icon-item--no-margin-left">
                     <a
                       href=""
-                      class="link team-list__icon-link"
+                      class="team-list__icon-link"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -396,7 +397,7 @@
                   <li class="team-list__icon-item">
                     <a
                       href=""
-                      class="link team-list__icon-link"
+                      class="team-list__icon-link"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -408,7 +409,7 @@
                   <li class="team-list__icon-item">
                     <a
                       href=""
-                      class="link team-list__icon-link"
+                      class="team-list__icon-link"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -420,7 +421,7 @@
                   <li class="team-list__icon-item">
                     <a
                       href=""
-                      class="link team-list__icon-link"
+                      class="team-list__icon-link"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -440,44 +441,44 @@
       <section class="section section-clients">
         <div class="container">
           <h2 class="section__title">Постоянные клиенты</h2>
-          <ul class="clients-list list">
+          <ul class="clients-list">
             <li class="clients-list__item">
-              <a href="" class="clients-list__link link" target="bank" rel="noopener noreferrer"
+              <a href="" class="clients-list__link" target="bank" rel="noopener noreferrer"
                 ><svg class="clients-list__icon" width="106" height="60">
                   <use href="images/icons.svg#client1"></use>
                 </svg>
               </a>
             </li>
             <li class="clients-list__item">
-              <a href="" class="clients-list__link link" target="bank" rel="noopener noreferrer"
+              <a href="" class="clients-list__link" target="bank" rel="noopener noreferrer"
                 ><svg class="clients-list__icon" width="106" height="60">
                   <use href="images/icons.svg#client2"></use>
                 </svg>
               </a>
             </li>
             <li class="clients-list__item">
-              <a href="" class="clients-list__link link" target="bank" rel="noopener noreferrer">
+              <a href="" class="clients-list__link" target="bank" rel="noopener noreferrer">
                 <svg class="clients-list__icon" width="106" height="60">
                   <use href="images/icons.svg#client3"></use>
                 </svg>
               </a>
             </li>
             <li class="clients-list__item">
-              <a href="" class="clients-list__link link" target="bank" rel="noopener noreferrer">
+              <a href="" class="clients-list__link" target="bank" rel="noopener noreferrer">
                 <svg class="clients-list__icon" width="106" height="60">
                   <use href="images/icons.svg#client4"></use>
                 </svg>
               </a>
             </li>
             <li class="clients-list__item">
-              <a href="" class="clients-list__link link" target="bank" rel="noopener noreferrer">
+              <a href="" class="clients-list__link" target="bank" rel="noopener noreferrer">
                 <svg class="clients-list__icon" width="106" height="60">
                   <use href="images/icons.svg#client5"></use>
                 </svg>
               </a>
             </li>
             <li class="clients-list__item">
-              <a href="" class="clients-list__link link" target="bank" rel="noopener noreferrer">
+              <a href="" class="clients-list__link" target="bank" rel="noopener noreferrer">
                 <svg class="clients-list__icon" width="106" height="60">
                   <use href="images/icons.svg#client6"></use>
                 </svg>
@@ -492,14 +493,14 @@
     <footer class="footer">
       <div class="container footer__container">
         <div class="footer-left">
-          <a class="logo footer-left__logo link" href="./index.html" lang="en">
+          <a class="logo footer-left__logo" href="./index.html" lang="en">
             <span class="logo__accent">Web</span>Studio</a
           >
-          <address class="address link">
-            <ul class="address-list list">
+          <address class="address">
+            <ul class="address-list">
               <li class="address-list__item">
                 <a
-                  class="address-list__link link"
+                  class="address-list__link"
                   href="https://goo.gl/maps/JsHpxsJ47qESHzWFA"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -509,13 +510,13 @@
               </li>
               <li class="address-list__item">
                 <a
-                  class="address-list__link address-list__link--alfa link"
+                  class="address-list__link address-list__link--alfa"
                   href="mailto:info@example.com"
                   >info@example.com</a
                 >
               </li>
               <li class="address-list__item">
-                <a class="address-list__link address-list__link--alfa link" href="tel:+380991111111"
+                <a class="address-list__link address-list__link--alfa" href="tel:+380991111111"
                   >+38 099 111 11 11</a
                 >
               </li>
@@ -526,30 +527,30 @@
         <div class="footer-center">
           <b class="social-label">присоединяйтесь</b>
           <div class="social-wrapper">
-            <ul class="social-list list">
+            <ul class="social-list">
               <li class="social-list__item">
-                <a href="" class="social-list__link link" target="_blank" rel="noopener noreferrer">
+                <a href="" class="social-list__link" target="_blank" rel="noopener noreferrer">
                   <svg class="social-list__icon" width="20" height="20">
                     <use href="images/icons.svg#instagram"></use>
                   </svg>
                 </a>
               </li>
               <li class="social-list__item">
-                <a href="" class="social-list__link link" target="_blank" rel="noopener noreferrer">
+                <a href="" class="social-list__link" target="_blank" rel="noopener noreferrer">
                   <svg class="social-list__icon" width="20" height="20">
                     <use href="images/icons.svg#twitter"></use>
                   </svg>
                 </a>
               </li>
               <li class="social-list__item">
-                <a href="" class="social-list__link link" target="_blank" rel="noopener noreferrer">
+                <a href="" class="social-list__link" target="_blank" rel="noopener noreferrer">
                   <svg class="social-list__icon" width="20" height="20">
                     <use href="images/icons.svg#facebook"></use>
                   </svg>
                 </a>
               </li>
               <li class="social-list__item">
-                <a href="" class="social-list__link link" target="_blank" rel="noopener noreferrer">
+                <a href="" class="social-list__link" target="_blank" rel="noopener noreferrer">
                   <svg class="social-list__icon" width="20" height="20">
                     <use href="images/icons.svg#linkedin"></use>
                   </svg>
@@ -628,17 +629,13 @@
             <input
               type="checkbox"
               name="agreement"
-              class="order-form__input-agreement visually-hidden"
+              class="order-form__input-agreement order-form__input-agreement--hidden"
             />
             <svg class="order-form__icon-check" width="15" height="15">
               <use href="images/icons.svg#check"></use>
             </svg>
             Соглашаюсь с рассылкой и принимаю&nbsp;
-            <a
-              href="#"
-              target="_blank"
-              class="link order-form__agreement-link"
-              rel="noreferrer noopener"
+            <a href="#" target="_blank" class="order-form__agreement-link" rel="noreferrer noopener"
               >Условия договора</a
             >
           </label>

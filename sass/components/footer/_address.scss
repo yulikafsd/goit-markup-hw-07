@@ -1,11 +1,18 @@
-
 // Футер Адрес
 
 .footer-left {
-  /* min-width: 231px;
-  margin-roght: 70px;
-  - максимально соотв. макету*/
   margin-right: 85px;
+}
+// min-width: 231px;
+// margin-right: 70px;
+// - максимально соотв. макету
+
+.address {
+  @extend %link;
+}
+
+.address-list {
+  @extend %list;
 }
 
 .address-list__item:not(:last-child) {
@@ -13,20 +20,22 @@
 }
 
 .address-list__link {
+  @extend %link;
+
   color: $primary-color;
   transition: color $main-effect;
-}
 
-.address-list__link:hover,
-.address-list__link:focus {
-  color: $alfa-text-color;
+  &:hover,
+  &:focus {
+    color: $alfa-text-color;
+  }
 }
 
 .address-list__link--alfa {
   color: $alfa-text-color;
-}
 
-.address-list__link--alfa:hover,
-.address-list__link--alfa:focus {
-  color: $primary-color;
+  &:hover,
+  &:focus {
+    color: $primary-color;
+  }
 }

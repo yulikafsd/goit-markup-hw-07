@@ -3,6 +3,7 @@
 .features-list {
   display: flex;
   margin: -15px;
+  @extend %list;
 }
 
 .features-list__item {
@@ -11,9 +12,7 @@
 }
 
 .features-list__icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include centeredFlex();
   width: 270px;
   height: 120px;
   background: $primary-bg-color;
@@ -21,21 +20,20 @@
   margin-bottom: 30px;
 }
 
-/* ----------- Второй вариант ------- */
+// Второй вариант
+// .features-list {
+//   display: flex;
+// }
 
-/* .features-list {
-  display: flex;
-} */
+// если больше 4х эл-тов в списке:
+// .features-list__item:not(:nth-child(4n)) {
+//   margin-right: 30px;
+// }
 
-/* если больше 4х эл-тов в списке: */
-/* .features-list__item:not(:nth-child(4n)) {
-  margin-right: 30px;
-} */
-
-/* если только 4 эл-та в списке: */
-/* .features-list__item:not(:last-child) {
-  margin-right: 30px;
-} */
+// если только 4 эл-та в списке:
+// .features-list__item:not(:last-child) {
+//   margin-right: 30px;
+// }
 
 .features-list__subtitle {
   margin-bottom: 10px;

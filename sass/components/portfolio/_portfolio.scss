@@ -1,6 +1,8 @@
 // Портфолио
 
 .portfolio-list {
+  @extend %list;
+
   display: flex;
   flex-wrap: wrap;
   margin: calc(-1 * 15px);
@@ -12,13 +14,15 @@
 }
 
 .portfolio-list__link {
+  @extend %link;
+
   display: block;
   transition: box-shadow $main-effect;
-}
 
-.portfolio-list__link:hover,
-.portfolio-list__link:focus {
-  box-shadow: $portfolio-item-shadow;
+  &:hover,
+  &:focus {
+    box-shadow: $portfolio-item-shadow;
+  }
 }
 
 .portfolio-list__subtitle {
@@ -56,9 +60,9 @@
   background-color: $overlay-bg-color;
   padding: 63px 24px;
   transition: transform $main-effect;
-}
 
-.portfolio-list__link:hover .portfolio-list__overlay,
-.portfolio-list__link:focus .portfolio-list__overlay {
-  transform: translateY(-100%);
+  .portfolio-list__link:hover &,
+  .portfolio-list__link:focus & {
+    transform: translateY(-100%);
+  }
 }

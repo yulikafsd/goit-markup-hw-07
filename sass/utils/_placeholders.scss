@@ -1,13 +1,13 @@
-.list {
+%list {
   list-style: none;
 }
 
-.link {
+%link {
   text-decoration: none;
   font-style: normal;
 }
 
-.visually-hidden {
+%visually-hidden {
   position: absolute;
   white-space: nowrap;
   width: 1px;

@@ -1,4 +1,3 @@
-
 // Секция Услуги
 
 .section-services {
@@ -7,15 +6,20 @@
 
 .services-list {
   display: flex;
+  @extend %list;
+}
+
+.services-list__link {
+  @extend %link;
 }
 
 .services-list__item {
   position: relative;
   display: block;
-}
 
-.services-list__item:not(:last-child) {
+  &:not(:last-child) {
   margin-right: 30px;
+}
 }
 
 .services-list__subtitle {
