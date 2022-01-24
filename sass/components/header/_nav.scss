@@ -5,8 +5,6 @@
 }
 
 .nav-list {
-  @extend %list;
-
   display: flex;
 }
 
@@ -15,8 +13,6 @@
 }
 
 .nav-list__link {
-  @extend %link;
-
   position: relative;
 
   display: block;
@@ -59,7 +55,6 @@
 .contact-list {
   display: flex;
   margin-left: auto;
-  @extend %list;
 }
 
 .contact-list__item:not(:last-child) {
@@ -68,7 +63,6 @@
 
 .contact-list__link {
   @include centeredFlex($just: start);
-  @extend %link;
 
   padding-top: 32px;
   padding-bottom: 32px;

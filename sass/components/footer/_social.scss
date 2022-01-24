@@ -22,12 +22,10 @@
 
 .social-list {
   display: flex;
-  @extend %list;
 }
 
 .social-list__link {
   @include centeredFlex();
-  @extend %link;
 
   width: 44px;
   height: 44px;
@@ -38,9 +36,10 @@
   color: $primary-color;
   transition: background-color $main-effect;
 
-  &:hover, &:focus {
-  background-color: $accent-color;
-}
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
 }
 
 .social-list__item:not(:last-child) {

@@ -3,7 +3,6 @@
 .features-list {
   display: flex;
   margin: -15px;
-  @extend %list;
 }
 
 .features-list__item {

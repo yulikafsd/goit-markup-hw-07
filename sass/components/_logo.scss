@@ -14,8 +14,6 @@
 // Лого шапки
 
 .nav__logo {
-  @extend %link;
-
   padding-top: 24px;
   padding-bottom: 25px;
   margin-right: 93px;
@@ -26,8 +24,6 @@
 // Лого футера
 
 .footer-left__logo {
-  @extend %link;
-
   display: inline-block;
   padding-bottom: 20px;
   color: $primary-color;

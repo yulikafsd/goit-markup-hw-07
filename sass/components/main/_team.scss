@@ -7,7 +7,6 @@
 .team-list {
   display: flex;
   margin: calc(-1 * 15px);
-  @extend %list;
 }
 
 .team-list__item {
@@ -41,7 +40,6 @@
 .team-list__icons-list {
   display: flex;
   justify-content: center;
-  @extend %list;
 }
 
 .team-list__icon-item:not(:first-child) {
@@ -55,7 +53,6 @@
 
 .team-list__icon-link {
   @include centeredFlex();
-  @extend %link;
 
   width: 44px;
   height: 44px;

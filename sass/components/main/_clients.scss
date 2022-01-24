@@ -7,7 +7,6 @@
 .clients-list {
   display: flex;
   margin: calc(-1 * 15px);
-  @extend %list;
 }
 
 .clients-list__item {
@@ -17,7 +16,6 @@
 
 .clients-list__link {
   @include centeredFlex();
-  @extend %link;
 
   width: 170px;
   height: 92px;

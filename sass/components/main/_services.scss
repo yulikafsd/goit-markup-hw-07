@@ -6,11 +6,6 @@
 
 .services-list {
   display: flex;
-  @extend %list;
-}
-
-.services-list__link {
-  @extend %link;
 }
 
 .services-list__item {
@@ -18,8 +13,8 @@
   display: block;
 
   &:not(:last-child) {
-  margin-right: 30px;
-}
+    margin-right: 30px;
+  }
 }
 
 .services-list__subtitle {

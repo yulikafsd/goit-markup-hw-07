@@ -7,21 +7,11 @@
 // margin-right: 70px;
 // - максимально соотв. макету
 
-.address {
-  @extend %link;
-}
-
-.address-list {
-  @extend %list;
-}
-
 .address-list__item:not(:last-child) {
   margin-bottom: 9px;
 }
 
 .address-list__link {
-  @extend %link;
-
   color: $primary-color;
   transition: color $main-effect;
 

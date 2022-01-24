@@ -4,15 +4,15 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: $backdrop-bg-color;
   opacity: 1;
   visibility: visible;
   transition: opacity $main-effect, visibility $main-effect;
 }
 
-.backdrop.is-hidden {
+.is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
@@ -194,13 +194,7 @@
   }
 }
 
-.order-form__input-agreement--hidden {
-  @extend %visually-hidden;
-}
-
 .order-form__agreement-link {
-  @extend %link;
-
   text-decoration-line: underline;
   color: $accent-color;
 }

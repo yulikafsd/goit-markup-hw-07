@@ -4,7 +4,6 @@
   display: flex;
   margin-bottom: 50px;
   justify-content: center;
-  @extend %list;
 }
 
 .filter-list__item:not(:last-child) {
