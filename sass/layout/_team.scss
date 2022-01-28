@@ -6,19 +6,19 @@
 
 .team-list {
   display: flex;
-  margin: calc(-1 * 15px);
+  margin: calc(-1 * #{$gap});
 }
 
 .team-list__item {
-  margin: 15px;
-  width: calc((100% - 120px) / 4);
+  margin: $gap;
+  width: calc((100% - (8 * #{$gap})) / 4);
   background-color: $primary-color;
   box-shadow: $team-shadow;
   border-radius: 0 0 4px 4px;
 }
 
 .team-list__card {
-  padding: 30px 0;
+  padding: 30px 0px;
 }
 
 .team-list__subtitle {

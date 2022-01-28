@@ -3,14 +3,17 @@
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
-  margin: calc(-1 * 15px);
+  margin: calc(-1 * #{$gap});
 }
 
 .portfolio-list__item {
-  margin: 15px;
-  flex-basis: calc(100% / 3 - 30px);
+  margin: $gap;
+  width: calc(100% / 3 - (2 * #{$gap}));
 }
 
+.port-img {
+  width: 100%;
+}
 .portfolio-list__link {
   display: block;
   transition: box-shadow $main-effect;
@@ -56,7 +59,8 @@
   color: $primary-color;
   background-color: $overlay-bg-color;
   padding: 63px 24px;
-  overflow: auto;
+  overflow: hidden;
+  // если будет больше текста, ставим overflow:auto - появятся скроллы
   transition: transform $main-effect;
 
   .portfolio-list__item:hover &,

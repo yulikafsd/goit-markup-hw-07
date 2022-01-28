@@ -6,12 +6,12 @@
 
 .clients-list {
   display: flex;
-  margin: calc(-1 * 15px);
+  margin: calc(-1 * #{$gap});
 }
 
 .clients-list__item {
   margin: 15px;
-  width: calc(100% - (12 * 15px) / 6);
+  width: calc(100% - (12 * #{$gap}) / 6);
 }
 
 .clients-list__link {

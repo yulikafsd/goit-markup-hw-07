@@ -7,7 +7,7 @@
 
 .features-list__item {
   margin: 15px;
-  width: calc((100% - 120px) / 4);
+  width: calc((100% - (8 * #{$gap})) / 4);
 }
 
 .features-list__icons {
@@ -16,7 +16,7 @@
   height: 120px;
   background: $primary-bg-color;
   border-radius: 4px;
-  margin-bottom: 30px;
+  margin-bottom: calc(2 * #{$gap});
 }
 
 // Второй вариант

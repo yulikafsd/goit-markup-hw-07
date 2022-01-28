@@ -6,8 +6,8 @@
   right: 8px;
 
   @include centeredFlex();
-  width: 30px;
-  height: 30px;
+  width: calc(2 * #{$gap});
+  height: calc(2 * #{$gap});
   padding: 0;
 
   color: $button-close-color;
