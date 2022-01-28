@@ -106,7 +106,7 @@ body {
   color: #212121;
 }
 
-.footer-left__logo {
+.footer-address__logo {
   display: inline-block;
   padding-bottom: 20px;
   color: #ffffff;
@@ -533,7 +533,7 @@ body {
   align-items: baseline;
 }
 
-.footer-left {
+.footer-address {
   margin-right: 85px;
 }
 
@@ -558,7 +558,7 @@ body {
   color: #ffffff;
 }
 
-.footer-center {
+.footer-social {
   display: block;
   margin-right: 93px;
 }
