@@ -19,33 +19,3 @@
   color: $primary-color;
   margin-bottom: 20px;
 }
-
-.social-list {
-  display: flex;
-}
-
-.social-list__link {
-  @include centeredFlex();
-
-  width: 44px;
-  height: 44px;
-
-  background-color: $footer-icon-bg-color;
-  border-radius: 50%;
-
-  color: $primary-color;
-  transition: background-color $main-effect;
-
-  &:hover,
-  &:focus {
-    background-color: $accent-color;
-  }
-}
-
-.social-list__item:not(:last-child) {
-  margin-right: 10px;
-}
-
-.social-list__icon {
-  fill: currentColor;
-}
